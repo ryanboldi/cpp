@@ -1,0 +1,4 @@
+**/.exercism*
+**/target*
+*.json
+*.sqlite
