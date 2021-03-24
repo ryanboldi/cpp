@@ -1,5 +1,9 @@
 #include "reverse_string.h"
 
-namespace reverse_string {
+using namespace std;
 
-}  // namespace reverse_string
+namespace reverse_string {
+    string reverse_string(string input){
+        return input;
+    }
+} 
