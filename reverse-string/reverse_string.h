@@ -2,10 +2,9 @@
 #define REVERSE_STRING_H
 
 #include <string>
-using namespace std;
 
 namespace reverse_string {
-    string reverse_string(string input); 
+    std::string reverse_string(std::string input); 
 }
 
 #endif // REVERSE_STRING_H
