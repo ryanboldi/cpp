@@ -2,53 +2,59 @@
 
 namespace space_age
 {
-    space_age::space_age(double sec)
-    {
-        private_seconds = sec;
-    }
+    //is this the correct place to put named constants?
+    const double SECONDS_IN_EARTH_YEAR = 365.25 * 60 * 60 * 24;
+
+    const double MERCURY_PERIOD = 0.2408467;
+    const double VENUS_PERIOD = 0.61519726;
+    const double MARS_PERIOD = 1.8808158;
+    const double JUPITER_PERIOD = 11.862615;
+    const double SATURN_PERIOD = 29.447498;
+    const double URANUS_PERIOD = 84.016846;
+    const double NEPTUNE_PERIOD = 164.79132;
 
     double space_age::seconds() const
     {
-        return private_seconds;
+        return age_in_seconds;
     }
 
     double space_age::on_earth() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25);
+        return age_in_seconds / (SECONDS_IN_EARTH_YEAR);
     }
 
     double space_age::on_mercury() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 0.2408467);
+        return on_earth() / MERCURY_PERIOD;
     }
 
     double space_age::on_venus() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 0.61519726);
+        return on_earth() / VENUS_PERIOD;
     }
 
     double space_age::on_mars() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 1.8808158);
+        return on_earth() / MARS_PERIOD;
     }
 
     double space_age::on_jupiter() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 11.862615);
+        return on_earth() / JUPITER_PERIOD;
     }
 
     double space_age::on_saturn() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 29.447498);
+        return on_earth() / SATURN_PERIOD;
     }
 
     double space_age::on_uranus() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 84.016846);
+        return on_earth() / URANUS_PERIOD;
     }
 
     double space_age::on_neptune() const
     {
-        return private_seconds / (60 * 60 * 24 * 365.25 * 164.79132);
+        return on_earth() / NEPTUNE_PERIOD;
     }
 }

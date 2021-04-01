@@ -5,10 +5,10 @@ namespace space_age
 {
     class space_age
     {
-        double private_seconds;
+        double age_in_seconds;
 
     public:
-        space_age(double sec);
+        explicit space_age(double sec) : age_in_seconds{sec} {};
 
         double seconds() const;
 
