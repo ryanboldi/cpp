@@ -5,7 +5,7 @@ space_age::space_age::space_age(double sec)
     space_age::private_seconds = sec;
 }
 
-const double space_age::space_age::seconds()
+double space_age::space_age::seconds() const
 {
     return space_age::private_seconds;
 }

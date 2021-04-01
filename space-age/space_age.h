@@ -10,7 +10,7 @@ namespace space_age
     public:
         space_age(double sec);
 
-        double seconds();
+        double seconds() const;
     };
 }
 
