@@ -8,7 +8,7 @@ namespace space_age
         double age_in_seconds;
 
     public:
-        explicit space_age(double sec) : age_in_seconds{sec} {};
+        explicit space_age(double sec);
 
         double seconds() const;
 

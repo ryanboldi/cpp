@@ -13,6 +13,9 @@ namespace space_age
     const double earth_years_in_uranus_period = 84.016846;
     const double earth_years_in_neptune_period = 164.79132;
 
+    space_age::space_age(double sec)
+        : age_in_seconds(sec) {}
+
     double space_age::seconds() const
     {
         return age_in_seconds;
