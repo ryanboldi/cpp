@@ -4,22 +4,19 @@ namespace triangle
 {
     flavor kind(double a, double b, double c)
     {
-        //create array to store the triangle sides
         std::array<double, 3> sides = {a, b, c};
 
-        //sort the array
         std::sort(std::begin(sides), std::end(sides));
 
-        //check for illegal triangle:
         if (isIllegal(sides))
         {
             throw std::domain_error("triangle invalid");
         }
-        else if (a == b && b == c)
+        else if (essentiallyEqual(a, b) && essentiallyEqual(b, c))
         {
             return flavor::equilateral;
         }
-        else if (a == b || b == c || a == c)
+        else if (essentiallyEqual(a, b) || essentiallyEqual(b, c) || essentiallyEqual(a, c))
         {
             return flavor::isosceles;
         }
@@ -33,6 +30,13 @@ namespace triangle
     {
         //check if the smallest side is shorter than 0, or that the largest side is bigger than the smaller two.
         return (sides[0] <= 0 || sides[0] + sides[1] < sides[2]);
+    }
+
+    bool essentiallyEqual(double a, double b)
+    {
+        double difference_tolerance = 0.0000001;
+
+        return (fabs(a - b) <= difference_tolerance);
     }
 
 } // namespace triangle
