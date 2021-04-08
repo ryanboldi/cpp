@@ -16,8 +16,6 @@ namespace triangle
     };
 
     flavor kind(double a, double b, double c);
-    bool isIllegal(std::array<double, 3> sides);
-    bool essentiallyEqual(double a, double b);
 } // namespace triangle
 
 #endif // TRIANGLE_H

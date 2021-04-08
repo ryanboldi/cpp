@@ -2,6 +2,10 @@
 
 namespace triangle
 {
+    //helper function declarations
+    bool isIllegal(std::array<double, 3> sides);
+    bool essentiallyEqual(double a, double b);
+
     flavor kind(double a, double b, double c)
     {
         std::array<double, 3> sides = {a, b, c};
@@ -12,11 +16,12 @@ namespace triangle
         {
             throw std::domain_error("triangle invalid");
         }
-        else if (essentiallyEqual(a, b) && essentiallyEqual(b, c))
+        //checks if biggest side and smallest side are essentially equal (and therefore also the middle one)
+        else if (essentiallyEqual(sides[2], sides[0]))
         {
             return flavor::equilateral;
         }
-        else if (essentiallyEqual(a, b) || essentiallyEqual(b, c) || essentiallyEqual(a, c))
+        else if (essentiallyEqual(sides[0], sides[1]) || essentiallyEqual(sides[1], sides[2]))
         {
             return flavor::isosceles;
         }
@@ -34,9 +39,10 @@ namespace triangle
 
     bool essentiallyEqual(double a, double b)
     {
-        double difference_tolerance = 0.0000001;
+        //use a relative epsilon
+        double epsilon = 0.000001 * std::max(std::abs(a), std::abs(b));
 
-        return (fabs(a - b) <= difference_tolerance);
+        return (std::abs(a - b) <= epsilon);
     }
 
 } // namespace triangle
