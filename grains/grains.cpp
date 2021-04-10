@@ -5,9 +5,8 @@ namespace grains
 {
     unsigned long long square(unsigned long long n)
     {
-        unsigned long long base = 2;
-
-        return pow(base, n - 1);
+        //bitwise left shift AKA power of two
+        return (unsigned long long)1 << (n - 1ULL);
     }
 
     unsigned long long total()
