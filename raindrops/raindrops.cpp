@@ -1,5 +1,25 @@
 #include "raindrops.h"
 
-namespace raindrops {
+namespace raindrops
+{
+    std::string convert(int number)
+    {
+        std::string toReturn = "";
 
-}  // namespace raindrops
+        if (number % 3 == 0)
+            toReturn.append("Pling");
+
+        if (number % 5 == 0)
+            toReturn.append("Plang");
+
+        if (number % 7 == 0)
+            toReturn.append("Plong");
+
+        if (toReturn == "")
+        {
+            return std::to_string(number);
+        }
+
+        return toReturn;
+    }
+} // namespace raindrops
