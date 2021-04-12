@@ -2,21 +2,21 @@
 
 namespace raindrops
 {
+
+    std::array<std::pair<int, std::string>, 3> sounds{
+        {{3, "Pling"},
+         {5, "Plang"},
+         {7, "Plong"}}};
+
     std::string convert(int number)
     {
-
-        std::array<std::pair<int, std::string>, 3> sounds;
-        sounds[0] = std::pair<int, std::string>(3, "Pling");
-        sounds[1] = std::pair<int, std::string>(5, "Plang");
-        sounds[2] = std::pair<int, std::string>(7, "Plong");
-
         std::string toReturn = "";
 
-        for (unsigned int i = 0; i < sounds.size(); i++)
+        for (auto &factor_sound : sounds)
         {
-            if (number % sounds[i].first == 0)
+            if (number % factor_sound.first == 0)
             {
-                toReturn.append(sounds[i].second);
+                toReturn.append(factor_sound.second);
             }
         }
 
