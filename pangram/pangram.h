@@ -2,6 +2,9 @@
 #define PANGRAM_H
 
 #include <string>
+#include <set>
+#include <ctype.h>
+#include <algorithm>
 
 namespace pangram
 {
