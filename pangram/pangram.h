@@ -2,7 +2,7 @@
 #define PANGRAM_H
 
 #include <string>
-#include <set>
+#include <unordered_set>
 #include <ctype.h>
 #include <algorithm>
 
