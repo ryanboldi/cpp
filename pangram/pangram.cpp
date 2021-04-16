@@ -6,11 +6,11 @@ namespace pangram
     {
         std::unordered_set<char> lettersUsed;
 
-        for (auto it = sentence.begin(); it != sentence.end(); ++it)
+        for (auto &letter : sentence)
         {
-            if (isalpha(*it))
+            if (isalpha(letter))
             {
-                lettersUsed.insert(tolower(*it));
+                lettersUsed.insert(tolower(letter));
             }
         }
 
